@@ -1,6 +1,6 @@
 module github.com/crypto-zero/micro/v2
 
-go 1.13
+go 1.16
 
 require (
 	github.com/aws/aws-sdk-go v1.40.18
@@ -8,7 +8,7 @@ require (
 	github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e
 	github.com/cloudflare/cloudflare-go v0.20.0
 	github.com/crypto-zero/cli/v2 v2.2.3
-	github.com/crypto-zero/go-micro/v2 v2.9.3
+	github.com/crypto-zero/go-micro/v2 v2.9.4
 	github.com/dustin/go-humanize v1.0.0
 	github.com/fsnotify/fsnotify v1.4.9
 	github.com/go-acme/lego/v4 v4.4.0

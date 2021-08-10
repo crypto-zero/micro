@@ -180,8 +180,8 @@ github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ3
 github.com/creack/pty v1.1.11/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/crypto-zero/cli/v2 v2.2.3 h1:dKKugwM1jUebnUTvyY8FStOduxUZMTrng8zAZDxtmXA=
 github.com/crypto-zero/cli/v2 v2.2.3/go.mod h1:Xrf/smT0FZkE+sIIj7d3TEWdBrKH61WAb2iK3L2qwtM=
-github.com/crypto-zero/go-micro/v2 v2.9.3 h1:PqaINWNfSP9DYu56tFZCoUJp2ZzaE1eW33BUAOXfEfk=
-github.com/crypto-zero/go-micro/v2 v2.9.3/go.mod h1:XL/122tJz3TyUgeZd5NxWScXu8KGs85odrxIplKEdyk=
+github.com/crypto-zero/go-micro/v2 v2.9.4 h1:1sGcN984nJFlkzeEbOC/DA99Xl60/VnZWEOI9RQj/Z4=
+github.com/crypto-zero/go-micro/v2 v2.9.4/go.mod h1:XL/122tJz3TyUgeZd5NxWScXu8KGs85odrxIplKEdyk=
 github.com/cyberdelia/templates v0.0.0-20141128023046-ca7fffd4298c/go.mod h1:GyV+0YP4qX0UQ7r2MoYZ+AvYDp12OF5yg4q8rGnyNh4=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
@@ -221,7 +221,6 @@ github.com/fatih/color v1.7.0/go.mod h1:Zm6kSWBoL9eyXnKyktHP6abPY2pDugNf5Kwzbycv
 github.com/fatih/structs v1.1.0/go.mod h1:9NiDSp5zOcgEDl+j00MP/WkGVPOlPRLejGD8Ga6PJ7M=
 github.com/felixge/httpsnoop v1.0.1 h1:lvB5Jl89CsZtGIWuTcDM1E/vkVs49/Ml7JJe07l8SPQ=
 github.com/felixge/httpsnoop v1.0.1/go.mod h1:m8KPJKqk1gH5J9DgRY2ASl2lWCfGKXixSwevea8zH2U=
-github.com/flynn/go-shlex v0.0.0-20150515145356-3f9db97f8568 h1:BHsljHzVlRcyQhjrss6TZTdY2VfCqZPbv5k3iBFa2ZQ=
 github.com/flynn/go-shlex v0.0.0-20150515145356-3f9db97f8568/go.mod h1:xEzjJPgXI435gkrCt3MPfRiAkVrwSbHsst4LCFVfpJc=
 github.com/forestgiant/sliceutil v0.0.0-20160425183142-94783f95db6c h1:pBgVXWDXju1m8W4lnEeIqTHPOzhTUO81a7yknM/xQR4=
 github.com/forestgiant/sliceutil v0.0.0-20160425183142-94783f95db6c/go.mod h1:pFdJbAhRf7rh6YYMUdIQGyzne6zYL1tCUW8QV2B3UfY=

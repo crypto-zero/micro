@@ -8,8 +8,8 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/emicklei/proto"
 	registry "github.com/crypto-zero/go-micro/v2/registry/service/proto"
+	"github.com/emicklei/proto"
 	"github.com/spf13/cobra"
 )
 

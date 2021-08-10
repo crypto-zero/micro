@@ -1,6 +1,7 @@
 package api
 
 import (
+	"context"
 	"net"
 	"net/http"
 	"os"
@@ -9,11 +10,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/go-acme/lego/v4/providers/dns/cloudflare"
 	"github.com/crypto-zero/go-micro/v2/api/server/acme"
 	cert "github.com/crypto-zero/go-micro/v2/api/server/acme/certmagic"
 	"github.com/crypto-zero/go-micro/v2/sync/memory"
 	cfstore "github.com/crypto-zero/micro/v2/internal/plugins/store/cloudflare"
+	"github.com/go-acme/lego/v4/providers/dns/cloudflare"
 )
 
 func TestCertMagic(t *testing.T) {
@@ -70,7 +71,7 @@ func TestStorageImplementation(t *testing.T) {
 	s := cert.NewStorage(memory.NewSync(), st)
 
 	// Test Lock
-	if err := s.Lock("test"); err != nil {
+	if err := s.Lock(context.Background(), "test"); err != nil {
 		t.Fatal(err)
 	}
 

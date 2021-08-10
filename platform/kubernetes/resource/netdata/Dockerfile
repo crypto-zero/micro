@@ -3,7 +3,7 @@ ENV GO111MODULE on
 ENV CGO_ENABLED 0
 RUN mkdir /tmp/build
 WORKDIR /tmp/build
-RUN git clone https://github.com/micro/micro
+RUN git clone https://github.com/crypto-zero/micro
 WORKDIR /tmp/build/micro/debug/collector
 RUN go build .
 

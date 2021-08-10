@@ -32,7 +32,7 @@ if (!(Test-Path $MicroInstallDir -PathType Container)) {
 Write-Output "Getting the latest micro release"
 $releases = Invoke-RestMethod -Headers $githubHeader -Uri "https://api.github.com/repos/${GitHubOrg}/${GitHubRepo}/releases" -Method Get
 if ($releases.Count -eq 0) {
-    throw "No releases found in github.com/micro/micro repo"
+    throw "No releases found in github.com/crypto-zero/micro repo"
 }
 
 # Filter windows binary and download archive
@@ -76,5 +76,5 @@ if($UserPathEnvionmentVar -like '*micro*') {
 }
 
 Write-Output "`r`nmicro has been installed successfully."
-Write-Output "To start contributing to micro please visit https://github.com/micro"
+Write-Output "To start contributing to micro please visit https://github.com/crypto-zero//micro"
 Write-Output "Join micro community on slack https://micro.mu/slack"

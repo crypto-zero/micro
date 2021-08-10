@@ -9,10 +9,10 @@ import (
 	"os"
 	"strings"
 
-	ccli "github.com/micro/cli/v2"
-	"github.com/micro/micro/v2/internal/config"
-	"github.com/micro/micro/v2/internal/platform"
-	"github.com/micro/micro/v2/service/runtime/profile"
+	ccli "github.com/crypto-zero/cli/v2"
+	"github.com/crypto-zero/micro/v2/internal/config"
+	"github.com/crypto-zero/micro/v2/internal/platform"
+	"github.com/crypto-zero/micro/v2/service/runtime/profile"
 )
 
 const (

@@ -2,13 +2,13 @@
 package dns
 
 import (
-	"github.com/micro/cli/v2"
-	"github.com/micro/go-micro/v2"
-	log "github.com/micro/go-micro/v2/logger"
+	"github.com/crypto-zero/cli/v2"
+	"github.com/crypto-zero/go-micro/v2"
+	log "github.com/crypto-zero/go-micro/v2/logger"
 
-	"github.com/micro/micro/v2/service/network/dns/handler"
-	dns "github.com/micro/micro/v2/service/network/dns/proto/dns"
-	"github.com/micro/micro/v2/service/network/dns/provider/cloudflare"
+	"github.com/crypto-zero/micro/v2/service/network/dns/handler"
+	dns "github.com/crypto-zero/micro/v2/service/network/dns/proto/dns"
+	"github.com/crypto-zero/micro/v2/service/network/dns/provider/cloudflare"
 )
 
 // Run is the entrypoint for network/dns

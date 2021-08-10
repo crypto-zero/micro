@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/micro/go-micro/v2/plugin"
+	"github.com/crypto-zero/go-micro/v2/plugin"
 	"golang.org/x/tools/go/packages"
 )
 
@@ -16,7 +16,7 @@ func buildSo(soPath string, parts []string) error {
 		return nil
 	}
 
-	path := filepath.Join(append([]string{"github.com/micro/go-plugins"}, parts...)...)
+	path := filepath.Join(append([]string{"github.com/crypto-zero/go-plugins"}, parts...)...)
 	pkgs, err := packages.Load(&packages.Config{Mode: packages.NeedName}, path)
 	if err != nil {
 		return err

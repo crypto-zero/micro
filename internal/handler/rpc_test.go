@@ -9,12 +9,12 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/micro/go-micro/v2/client"
-	"github.com/micro/go-micro/v2/client/selector"
-	"github.com/micro/go-micro/v2/config/cmd"
-	"github.com/micro/go-micro/v2/metadata"
-	"github.com/micro/go-micro/v2/registry/memory"
-	"github.com/micro/go-micro/v2/server"
+	"github.com/crypto-zero/go-micro/v2/client"
+	"github.com/crypto-zero/go-micro/v2/client/selector"
+	"github.com/crypto-zero/go-micro/v2/config/cmd"
+	"github.com/crypto-zero/go-micro/v2/metadata"
+	"github.com/crypto-zero/go-micro/v2/registry/memory"
+	"github.com/crypto-zero/go-micro/v2/server"
 )
 
 type TestHandler struct {

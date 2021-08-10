@@ -3,10 +3,10 @@ package api
 import (
 	"context"
 
-	"github.com/micro/go-micro/v2"
-	"github.com/micro/go-micro/v2/auth"
-	"github.com/micro/go-micro/v2/errors"
-	pb "github.com/micro/micro/v2/service/auth/api/proto"
+	"github.com/crypto-zero/go-micro/v2"
+	"github.com/crypto-zero/go-micro/v2/auth"
+	"github.com/crypto-zero/go-micro/v2/errors"
+	pb "github.com/crypto-zero/micro/v2/service/auth/api/proto"
 )
 
 // Handler is an impementation of the auth api

@@ -6,7 +6,7 @@ export GOPATH=~/c
 export GO111MODULE=on
 
 # get go-micro
-pushd ~/c/src/github.com/micro/
+pushd ~/c/src/github.com/crypto-zero/
 pushd go-micro
 git pull
 popd

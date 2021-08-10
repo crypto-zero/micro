@@ -10,9 +10,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/micro/go-micro/v2/runtime"
-	pb "github.com/micro/go-micro/v2/runtime/service/proto"
-	"github.com/micro/micro/v2/internal/namespace"
+	"github.com/crypto-zero/go-micro/v2/runtime"
+	pb "github.com/crypto-zero/go-micro/v2/runtime/service/proto"
+	"github.com/crypto-zero/micro/v2/internal/namespace"
 )
 
 func toProto(s *runtime.Service) *pb.Service {

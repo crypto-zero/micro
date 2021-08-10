@@ -4,9 +4,9 @@ import (
 	"context"
 	"sync"
 
-	"github.com/micro/go-micro/v2/debug/log"
-	"github.com/micro/go-micro/v2/errors"
-	pb "github.com/micro/micro/v2/service/debug/log/proto"
+	"github.com/crypto-zero/go-micro/v2/debug/log"
+	"github.com/crypto-zero/go-micro/v2/errors"
+	pb "github.com/crypto-zero/micro/v2/service/debug/log/proto"
 )
 
 type Log struct {

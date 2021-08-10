@@ -11,7 +11,7 @@ title: {{ .serviceName }}
 ` + "```" + `go
 package main
 import (
-  "github.com/micro/clients/go/client"
+  "github.com/crypto-zero/micro/clients/go/client"
   {{ packageNamify $.serviceName }}_proto "{{ $.goImportPrefix }}/{{ $.serviceName }}/proto"
 )
 func main() {

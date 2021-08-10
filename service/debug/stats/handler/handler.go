@@ -6,13 +6,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/micro/go-micro/v2/client"
-	"github.com/micro/go-micro/v2/config/cmd"
-	debug "github.com/micro/go-micro/v2/debug/service/proto"
-	"github.com/micro/go-micro/v2/errors"
-	"github.com/micro/go-micro/v2/registry"
-	"github.com/micro/go-micro/v2/util/ring"
-	stats "github.com/micro/micro/v2/service/debug/stats/proto"
+	"github.com/crypto-zero/go-micro/v2/client"
+	"github.com/crypto-zero/go-micro/v2/config/cmd"
+	debug "github.com/crypto-zero/go-micro/v2/debug/service/proto"
+	"github.com/crypto-zero/go-micro/v2/errors"
+	"github.com/crypto-zero/go-micro/v2/registry"
+	"github.com/crypto-zero/go-micro/v2/util/ring"
+	stats "github.com/crypto-zero/micro/v2/service/debug/stats/proto"
 )
 
 // New initialises and returns a new Stats service handler

@@ -3,10 +3,10 @@ package handler
 import (
 	"context"
 
-	log "github.com/micro/go-micro/v2/logger"
-	"github.com/micro/go-micro/v2/metadata"
-	dns "github.com/micro/micro/v2/service/network/dns/proto/dns"
-	"github.com/micro/micro/v2/service/network/dns/provider"
+	log "github.com/crypto-zero/go-micro/v2/logger"
+	"github.com/crypto-zero/go-micro/v2/metadata"
+	dns "github.com/crypto-zero/micro/v2/service/network/dns/proto/dns"
+	"github.com/crypto-zero/micro/v2/service/network/dns/provider"
 	"github.com/pkg/errors"
 )
 

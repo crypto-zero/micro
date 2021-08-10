@@ -6,10 +6,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/micro/cli/v2"
-	log "github.com/micro/go-micro/v2/logger"
-	goplugin "github.com/micro/go-micro/v2/plugin"
-	"github.com/micro/micro/v2/plugin"
+	"github.com/crypto-zero/cli/v2"
+	log "github.com/crypto-zero/go-micro/v2/logger"
+	goplugin "github.com/crypto-zero/go-micro/v2/plugin"
+	"github.com/crypto-zero/micro/v2/plugin"
 )
 
 func build(ctx *cli.Context) error {
@@ -33,9 +33,9 @@ func build(ctx *cli.Context) error {
 
 	// set the path
 	if len(path) == 0 {
-		// github.com/micro/go-plugins/broker/rabbitmq
-		// github.com/micro/go-plugins/micro/basic_auth
-		path = filepath.Join("github.com/micro/go-plugins", typ, name)
+		// github.com/crypto-zero/go-plugins/broker/rabbitmq
+		// github.com/crypto-zero/go-plugins/micro/basic_auth
+		path = filepath.Join("github.com/crypto-zero/go-plugins", typ, name)
 	}
 
 	// set the newfn

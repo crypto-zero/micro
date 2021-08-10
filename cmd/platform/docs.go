@@ -9,7 +9,7 @@ import (
 	"text/template"
 
 	"github.com/emicklei/proto"
-	registry "github.com/micro/go-micro/v2/registry/service/proto"
+	registry "github.com/crypto-zero/micro/go-micro/v2/registry/service/proto"
 	"github.com/spf13/cobra"
 )
 
@@ -32,7 +32,7 @@ var docsCmd = &cobra.Command{
 
 func init() {
 	docsCmd.Flags().StringVarP(&path, "path", "p", "", "Source directory to read from")
-	docsCmd.Flags().StringVarP(&goImportPrefix, "go-import-prefix", "g", "github.com/micro/services", "For go client examples, the path must be known ie \"github.com/micro/service\"")
+	docsCmd.Flags().StringVarP(&goImportPrefix, "go-import-prefix", "g", "github.com/crypto-zero/micro/services", "For go client examples, the path must be known ie \"github.com/crypto-zero/micro/service\"")
 	rootCmd.AddCommand(docsCmd)
 }
 
@@ -199,7 +199,7 @@ func typeToDefaultValue(typ string) string {
 	return "{}"
 }
 
-// similarly incredibly ugly implementation can be found at https://github.com/micro/platform/blob/master/web/app/src/app/endpoint-list/endpoint-list.component.ts#L68
+// similarly incredibly ugly implementation can be found at https://github.com/crypto-zero/micro/platform/blob/master/web/app/src/app/endpoint-list/endpoint-list.component.ts#L68
 func toJSON(input *registry.Value, level int) string {
 	if input == nil {
 		return "no data"

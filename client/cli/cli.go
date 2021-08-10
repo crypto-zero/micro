@@ -6,8 +6,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/micro/cli/v2"
-	storecli "github.com/micro/micro/v2/service/store/cli"
+	"github.com/crypto-zero/cli/v2"
+	storecli "github.com/crypto-zero/micro/v2/service/store/cli"
 
 	"github.com/chzyer/readline"
 )

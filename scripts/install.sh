@@ -136,7 +136,7 @@ fail_trap() {
     result=$?
     if [ "$result" != "0" ]; then
         echo "Failed to install micro"
-        echo "For support, please file an issue in https://github.com/micro/micro/issues"
+        echo "For support, please file an issue in https://github.com/crypto-zero/micro/issues"
     fi
     cleanup
     exit $result
@@ -150,7 +150,7 @@ cleanup() {
 
 printInfo() {
     echo -e "\nTo get started with micro please visit official documentation https://micro.mu/docs"
-    echo "To start contributing to micro please visit https://github.com/micro"
+    echo "To start contributing to micro please visit https://github.com/crypto-zero//micro"
     echo "Join micro community on slack https://micro.mu/slack"
 }
 

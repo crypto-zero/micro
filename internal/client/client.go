@@ -3,14 +3,14 @@ package client
 import (
 	"context"
 
-	ccli "github.com/micro/cli/v2"
-	"github.com/micro/go-micro/v2/auth"
-	"github.com/micro/go-micro/v2/client"
-	"github.com/micro/go-micro/v2/client/grpc"
-	"github.com/micro/go-micro/v2/metadata"
-	"github.com/micro/micro/v2/client/cli/util"
-	cliutil "github.com/micro/micro/v2/client/cli/util"
-	"github.com/micro/micro/v2/internal/config"
+	ccli "github.com/crypto-zero/cli/v2"
+	"github.com/crypto-zero/go-micro/v2/auth"
+	"github.com/crypto-zero/go-micro/v2/client"
+	"github.com/crypto-zero/go-micro/v2/client/grpc"
+	"github.com/crypto-zero/go-micro/v2/metadata"
+	"github.com/crypto-zero/micro/v2/client/cli/util"
+	cliutil "github.com/crypto-zero/micro/v2/client/cli/util"
+	"github.com/crypto-zero/micro/v2/internal/config"
 )
 
 // New returns a wrapped grpc client which will inject the
@@ -38,7 +38,7 @@ func (a *wrapper) Call(ctx context.Context, req client.Request, rsp interface{},
 		// get issues. To test after `micro env add mine 127.0.0.1:8081` do,
 		// `micro run github.com/crufter/micro-services/logspammer` works but
 		// `micro -env=mine run github.com/crufter/micro-services/logspammer` is broken.
-		// Related ticket https://github.com/micro/development/issues/193
+		// Related ticket https://github.com/crypto-zero/development/issues/193
 		//
 		// env := strings.ReplaceAll(a.env, "/", "-")
 		// ctx = metadata.Set(ctx, "Micro-Namespace", env)

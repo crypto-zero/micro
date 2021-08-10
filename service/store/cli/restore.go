@@ -3,9 +3,9 @@ package cli
 import (
 	"net/url"
 
-	"github.com/micro/cli/v2"
-	"github.com/micro/go-micro/v2/logger"
-	"github.com/micro/micro/v2/service/store/snapshot"
+	"github.com/crypto-zero/cli/v2"
+	"github.com/crypto-zero/go-micro/v2/logger"
+	"github.com/crypto-zero/micro/v2/service/store/snapshot"
 	"github.com/pkg/errors"
 )
 

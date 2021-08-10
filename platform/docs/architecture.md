@@ -26,8 +26,8 @@ The platform layers on the existing open source tools and there's a clear separa
 is as follows:
 
 - Platform - Micro as a Service. Fully managed platform - Hosted product and commercially licensed
-- Runtime - [Micro](https://github.com/micro/micro) is a runtime for services - Open source Apache 2.0 licensed
-- Framework - [Go Micro](https://github.com/micro/go-micro) is a framework for microservices development - Open source Apache 2.0 licensed
+- Runtime - [Micro](https://github.com/crypto-zero/micro) is a runtime for services - Open source Apache 2.0 licensed
+- Framework - [Go Micro](https://github.com/crypto-zero/go-micro) is a framework for microservices development - Open source Apache 2.0 licensed
 
 ## Diagram
 

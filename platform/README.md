@@ -14,7 +14,7 @@ related source code and documentation.
 Install the platform binary
 
 ```
-go get github.com/micro/micro/cmd/platform
+go get github.com/crypto-zero/micro/cmd/platform
 ```
 
 To bootstrap the platform, create a [config.yaml](./config-test.yaml), and prepare a AWS S3 bucket
@@ -34,7 +34,7 @@ platform infra destroy -c config.yaml
 ```
 
 Configuration options can be set with viper, for example
-[the state-store flag](https://github.com/micro/platform/blob/cc27173/cmd/infra.go#L44) can be set by
+[the state-store flag](https://github.com/crypto-zero/platform/blob/cc27173/cmd/infra.go#L44) can be set by
 setting the environment variable `MICRO_STATE_STORE`.
 
 See the [docs](docs) for more info.

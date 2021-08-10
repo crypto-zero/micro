@@ -4,8 +4,8 @@ var (
 	MainFNC = `package main
 
 import (
-  log	"github.com/micro/go-micro/v2/logger"
-	"github.com/micro/go-micro/v2"
+  log	"github.com/crypto-zero/go-micro/v2/logger"
+	"github.com/crypto-zero/go-micro/v2"
 	"{{.Dir}}/handler"
 	"{{.Dir}}/subscriber"
 )
@@ -36,8 +36,8 @@ func main() {
 	MainSRV = `package main
 
 import (
-	log "github.com/micro/go-micro/v2/logger"
-	"github.com/micro/go-micro/v2"
+	log "github.com/crypto-zero/go-micro/v2/logger"
+	"github.com/crypto-zero/go-micro/v2"
 	"{{.Dir}}/handler"
 	"{{.Dir}}/subscriber"
 
@@ -69,9 +69,9 @@ func main() {
 	MainAPI = `package main
 
 import (
-	log "github.com/micro/go-micro/v2/logger"
+	log "github.com/crypto-zero/go-micro/v2/logger"
 
-	"github.com/micro/go-micro/v2"
+	"github.com/crypto-zero/go-micro/v2"
 	"{{.Dir}}/handler"
 	"{{.Dir}}/client"
 
@@ -103,9 +103,9 @@ func main() {
 	MainWEB = `package main
 
 import (
-        log "github.com/micro/go-micro/v2/logger"
+        log "github.com/crypto-zero/go-micro/v2/logger"
 	      "net/http"
-        "github.com/micro/go-micro/v2/web"
+        "github.com/crypto-zero/go-micro/v2/web"
         "{{.Dir}}/handler"
 )
 

@@ -11,20 +11,20 @@ import (
 	"sync"
 	"time"
 
-	"github.com/micro/cli/v2"
-	"github.com/micro/go-micro/v2"
+	"github.com/crypto-zero/cli/v2"
+	"github.com/crypto-zero/go-micro/v2"
 
-	"github.com/micro/go-micro/v2/agent/command"
-	"github.com/micro/go-micro/v2/agent/input"
-	log "github.com/micro/go-micro/v2/logger"
-	botc "github.com/micro/micro/v2/internal/command/bot"
+	"github.com/crypto-zero/go-micro/v2/agent/command"
+	"github.com/crypto-zero/go-micro/v2/agent/input"
+	log "github.com/crypto-zero/go-micro/v2/logger"
+	botc "github.com/crypto-zero/micro/v2/internal/command/bot"
 
-	proto "github.com/micro/go-micro/v2/agent/proto"
+	proto "github.com/crypto-zero/go-micro/v2/agent/proto"
 
 	// inputs
-	_ "github.com/micro/go-micro/v2/agent/input/discord"
-	_ "github.com/micro/go-micro/v2/agent/input/slack"
-	_ "github.com/micro/go-micro/v2/agent/input/telegram"
+	_ "github.com/crypto-zero/go-micro/v2/agent/input/discord"
+	_ "github.com/crypto-zero/go-micro/v2/agent/input/slack"
+	_ "github.com/crypto-zero/go-micro/v2/agent/input/telegram"
 )
 
 type bot struct {

@@ -14,9 +14,9 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/micro/cli/v2"
-	tmpl "github.com/micro/micro/v2/internal/template"
-	"github.com/micro/micro/v2/internal/usage"
+	"github.com/crypto-zero/cli/v2"
+	tmpl "github.com/crypto-zero/micro/v2/internal/template"
+	"github.com/crypto-zero/micro/v2/internal/usage"
 	"github.com/xlab/treeprint"
 )
 
@@ -27,7 +27,7 @@ func protoComments(goDir, alias string) []string {
 		"\ndownload protobuf for micro:\n",
 		"go get -u github.com/golang/protobuf/proto",
 		"go get -u github.com/golang/protobuf/protoc-gen-go",
-		"go get github.com/micro/micro/v2/cmd/protoc-gen-micro",
+		"go get github.com/crypto-zero/micro/v2/cmd/protoc-gen-micro",
 		"\ncompile the proto file " + alias + ".proto:\n",
 		"cd " + goDir,
 		"make proto\n",
@@ -45,9 +45,9 @@ type config struct {
 	Type string
 	// go.micro.service.foo
 	FQDN string
-	// github.com/micro/foo
+	// github.com/crypto-zero/foo
 	Dir string
-	// $GOPATH/src/github.com/micro/foo
+	// $GOPATH/src/github.com/crypto-zero/foo
 	GoDir string
 	// $GOPATH
 	GoPath string
@@ -158,7 +158,7 @@ func copyAPIProto(c config) (string, error) {
 
 	contents, err := ioutil.ReadDir(filepath.Join(basedir, "pkg", "mod", "github.com", "micro", "go-micro"))
 	if err != nil {
-		return "", errors.New("Unable to find go-micro version. Please try `go get github.com/micro/go-micro/v2`")
+		return "", errors.New("Unable to find go-micro version. Please try `go get github.com/crypto-zero/go-micro/v2`")
 	}
 	newestDir := ""
 	for _, v := range contents {
@@ -167,10 +167,10 @@ func copyAPIProto(c config) (string, error) {
 		}
 	}
 	if newestDir == "" {
-		return "", errors.New("Unable to find go-micro version. Please try `go get github.com/micro/go-micro/v2`")
+		return "", errors.New("Unable to find go-micro version. Please try `go get github.com/crypto-zero/go-micro/v2`")
 	}
 
-	input, err := ioutil.ReadFile(fmt.Sprintf("%s/pkg/mod/github.com/micro/go-micro/%s/api/proto/api.proto", basedir, newestDir))
+	input, err := ioutil.ReadFile(fmt.Sprintf("%s/pkg/mod/github.com/crypto-zero/go-micro/%s/api/proto/api.proto", basedir, newestDir))
 	if err != nil {
 		return "", err
 	}

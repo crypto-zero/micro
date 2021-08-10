@@ -10,9 +10,9 @@ import (
 	"unicode/utf8"
 
 	"github.com/dustin/go-humanize"
-	"github.com/micro/cli/v2"
-	"github.com/micro/go-micro/v2/config/cmd"
-	"github.com/micro/go-micro/v2/store"
+	"github.com/crypto-zero/cli/v2"
+	"github.com/crypto-zero/go-micro/v2/config/cmd"
+	"github.com/crypto-zero/go-micro/v2/store"
 	"github.com/pkg/errors"
 )
 

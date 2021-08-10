@@ -6,7 +6,7 @@
 package cli
 
 import (
-	"github.com/micro/cli/v2"
+	"github.com/crypto-zero/cli/v2"
 )
 
 // CommonFlags are flags common to cli commands snapshot and restore

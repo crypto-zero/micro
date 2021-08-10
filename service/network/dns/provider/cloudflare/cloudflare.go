@@ -10,9 +10,9 @@ import (
 	miekdns "github.com/miekg/dns"
 	"github.com/pkg/errors"
 
-	log "github.com/micro/go-micro/v2/logger"
-	dns "github.com/micro/micro/v2/service/network/dns/proto/dns"
-	"github.com/micro/micro/v2/service/network/dns/provider"
+	log "github.com/crypto-zero/go-micro/v2/logger"
+	dns "github.com/crypto-zero/micro/v2/service/network/dns/proto/dns"
+	"github.com/crypto-zero/micro/v2/service/network/dns/provider"
 )
 
 type cfProvider struct {
@@ -35,11 +35,12 @@ func New(apiToken, zoneID string) (provider.Provider, error) {
 
 func (cf *cfProvider) Advertise(records ...*dns.Record) error {
 	for _, r := range records {
-		_, err := cf.api.CreateDNSRecord(cf.zoneID, cloudflare.DNSRecord{
+		priority := uint16(r.GetPriority())
+		_, err := cf.api.CreateDNSRecord(context.Background(), cf.zoneID, cloudflare.DNSRecord{
 			Name:     r.GetName(),
 			Content:  r.GetValue(),
 			Type:     r.GetType(),
-			Priority: int(r.GetPriority()),
+			Priority: &priority,
 			TTL:      1,
 		})
 		if err != nil {
@@ -52,7 +53,7 @@ func (cf *cfProvider) Advertise(records ...*dns.Record) error {
 
 func (cf *cfProvider) Remove(records ...*dns.Record) error {
 	existing := make(map[string]map[string]cloudflare.DNSRecord)
-	existingRecords, err := cf.api.DNSRecords(cf.zoneID, cloudflare.DNSRecord{})
+	existingRecords, err := cf.api.DNSRecords(context.Background(), cf.zoneID, cloudflare.DNSRecord{})
 	if err != nil {
 		return err
 	}
@@ -70,7 +71,7 @@ func (cf *cfProvider) Remove(records ...*dns.Record) error {
 		if !found {
 			return errors.New("Record " + r.Name + " with address " + r.Value + " could not be deleted as it doesn't exist")
 		}
-		err := cf.api.DeleteDNSRecord(cf.zoneID, toDelete.ID)
+		err := cf.api.DeleteDNSRecord(context.Background(), cf.zoneID, toDelete.ID)
 		if err != nil {
 			return err
 		}

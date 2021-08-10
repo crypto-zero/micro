@@ -7,9 +7,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	conf "github.com/micro/go-micro/v2/config"
-	"github.com/micro/go-micro/v2/config/source/file"
-	"github.com/micro/go-micro/v2/util/log"
+	conf "github.com/crypto-zero/go-micro/v2/config"
+	"github.com/crypto-zero/go-micro/v2/config/source/file"
+	"github.com/crypto-zero/go-micro/v2/util/log"
 )
 
 // FileName for global micro config

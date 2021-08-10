@@ -7,12 +7,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/micro/cli/v2"
-	"github.com/micro/go-micro/v2/agent/command"
-	"github.com/micro/go-micro/v2/agent/input"
+	"github.com/crypto-zero/cli/v2"
+	"github.com/crypto-zero/go-micro/v2/agent/command"
+	"github.com/crypto-zero/go-micro/v2/agent/input"
 
-	"github.com/micro/go-micro/v2"
-	"github.com/micro/go-micro/v2/registry/memory"
+	"github.com/crypto-zero/go-micro/v2"
+	"github.com/crypto-zero/go-micro/v2/registry/memory"
 )
 
 type testInput struct {

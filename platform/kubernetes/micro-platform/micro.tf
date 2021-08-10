@@ -3,7 +3,7 @@ locals {
     "micro" = "runtime"
   }
   common_annotations = {
-    "source"  = "github.com/micro/micro"
+    "source"  = "github.com/crypto-zero/micro"
     "owner"   = "micro"
     "group"   = "micro"
     "version" = "latest"

@@ -7,14 +7,14 @@ import (
 	"sync"
 	"time"
 
-	"github.com/micro/go-micro/v2/client"
-	cr "github.com/micro/go-micro/v2/config/reader"
-	jr "github.com/micro/go-micro/v2/config/reader/json"
-	"github.com/micro/go-micro/v2/config/source"
-	pb "github.com/micro/go-micro/v2/config/source/service/proto"
-	"github.com/micro/go-micro/v2/errors"
-	"github.com/micro/go-micro/v2/store"
-	"github.com/micro/micro/v2/internal/namespace"
+	"github.com/crypto-zero/go-micro/v2/client"
+	cr "github.com/crypto-zero/go-micro/v2/config/reader"
+	jr "github.com/crypto-zero/go-micro/v2/config/reader/json"
+	"github.com/crypto-zero/go-micro/v2/config/source"
+	pb "github.com/crypto-zero/go-micro/v2/config/source/service/proto"
+	"github.com/crypto-zero/go-micro/v2/errors"
+	"github.com/crypto-zero/go-micro/v2/store"
+	"github.com/crypto-zero/micro/v2/internal/namespace"
 )
 
 var (

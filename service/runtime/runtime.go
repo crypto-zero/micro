@@ -4,15 +4,15 @@ package runtime
 import (
 	"os"
 
-	"github.com/micro/cli/v2"
-	"github.com/micro/go-micro/v2"
-	"github.com/micro/go-micro/v2/config/cmd"
-	log "github.com/micro/go-micro/v2/logger"
-	"github.com/micro/go-micro/v2/runtime"
-	pb "github.com/micro/go-micro/v2/runtime/service/proto"
-	"github.com/micro/micro/v2/service/runtime/handler"
-	"github.com/micro/micro/v2/service/runtime/manager"
-	"github.com/micro/micro/v2/service/runtime/profile"
+	"github.com/crypto-zero/cli/v2"
+	"github.com/crypto-zero/go-micro/v2"
+	"github.com/crypto-zero/go-micro/v2/config/cmd"
+	log "github.com/crypto-zero/go-micro/v2/logger"
+	"github.com/crypto-zero/go-micro/v2/runtime"
+	pb "github.com/crypto-zero/go-micro/v2/runtime/service/proto"
+	"github.com/crypto-zero/micro/v2/service/runtime/handler"
+	"github.com/crypto-zero/micro/v2/service/runtime/manager"
+	"github.com/crypto-zero/micro/v2/service/runtime/profile"
 )
 
 var (
@@ -105,7 +105,7 @@ func Flags() []cli.Flag {
 	return []cli.Flag{
 		&cli.StringFlag{
 			Name:  "source",
-			Usage: "Set the source url of the service e.g github.com/micro/services",
+			Usage: "Set the source url of the service e.g github.com/crypto-zero/services",
 		},
 		&cli.StringFlag{
 			Name:  "image",
@@ -167,10 +167,10 @@ func Commands(options ...micro.Option) []*cli.Command {
 			Name:  "run",
 			Usage: RunUsage,
 			Description: `Examples:
-			micro run github.com/micro/examples/helloworld
+			micro run github.com/crypto-zero/examples/helloworld
 			micro run .  # deploy local folder to your local micro server
 			micro run ../path/to/folder # deploy local folder to your local micro server
-			micro run helloworld # deploy latest version, translates to micro run github.com/micro/services/helloworld
+			micro run helloworld # deploy latest version, translates to micro run github.com/crypto-zero/services/helloworld
 			micro run helloworld@9342934e6180 # deploy certain version
 			micro run helloworld@branchname	# deploy certain branch`,
 			Flags: Flags(),
@@ -183,10 +183,10 @@ func Commands(options ...micro.Option) []*cli.Command {
 			Name:  "update",
 			Usage: UpdateUsage,
 			Description: `Examples:
-			micro update github.com/micro/examples/helloworld
+			micro update github.com/crypto-zero/examples/helloworld
 			micro update .  # deploy local folder to your local micro server
 			micro update ../path/to/folder # deploy local folder to your local micro server
-			micro update helloworld # deploy master branch, translates to micro update github.com/micro/services/helloworld
+			micro update helloworld # deploy master branch, translates to micro update github.com/crypto-zero/services/helloworld
 			micro update helloworld@branchname	# deploy certain branch`,
 			Flags: Flags(),
 			Action: func(ctx *cli.Context) error {
@@ -199,10 +199,10 @@ func Commands(options ...micro.Option) []*cli.Command {
 			Usage: KillUsage,
 			Flags: Flags(),
 			Description: `Examples:
-			micro kill github.com/micro/examples/helloworld
+			micro kill github.com/crypto-zero/examples/helloworld
 			micro kill .  # kill service deployed from local folder
 			micro kill ../path/to/folder # kill service deployed from local folder
-			micro kill helloworld # kill serviced deployed from master branch, translates to micro kill github.com/micro/services/helloworld
+			micro kill helloworld # kill serviced deployed from master branch, translates to micro kill github.com/crypto-zero/services/helloworld
 			micro kill helloworld@branchname	# kill service deployed from certain branch`,
 			Action: func(ctx *cli.Context) error {
 				killService(ctx, options...)

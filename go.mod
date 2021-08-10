@@ -8,7 +8,7 @@ require (
 	github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e
 	github.com/cloudflare/cloudflare-go v0.20.0
 	github.com/crypto-zero/cli/v2 v2.2.3
-	github.com/crypto-zero/go-micro/v2 v2.9.2
+	github.com/crypto-zero/go-micro/v2 v2.9.3
 	github.com/dustin/go-humanize v1.0.0
 	github.com/fsnotify/fsnotify v1.4.9
 	github.com/go-acme/lego/v4 v4.4.0

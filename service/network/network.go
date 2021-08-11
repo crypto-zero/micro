@@ -8,7 +8,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2"
 	log "github.com/crypto-zero/go-micro/v2/logger"
 	"github.com/crypto-zero/go-micro/v2/network"
@@ -29,6 +28,7 @@ import (
 	"github.com/crypto-zero/micro/v2/service/network/api"
 	netdns "github.com/crypto-zero/micro/v2/service/network/dns"
 	"github.com/crypto-zero/micro/v2/service/network/handler"
+	"github.com/urfave/cli/v2"
 )
 
 var (

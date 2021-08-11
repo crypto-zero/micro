@@ -6,7 +6,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2"
 	"github.com/crypto-zero/go-micro/v2/auth"
 	srvAuth "github.com/crypto-zero/go-micro/v2/auth/service"
@@ -23,6 +22,7 @@ import (
 	"github.com/crypto-zero/micro/v2/service/auth/api"
 	authHandler "github.com/crypto-zero/micro/v2/service/auth/handler/auth"
 	rulesHandler "github.com/crypto-zero/micro/v2/service/auth/handler/rules"
+	"github.com/urfave/cli/v2"
 )
 
 var (

@@ -10,13 +10,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2"
 	goapi "github.com/crypto-zero/go-micro/v2/api"
 	log "github.com/crypto-zero/go-micro/v2/logger"
 	"github.com/crypto-zero/go-micro/v2/network"
 	"github.com/crypto-zero/go-micro/v2/network/resolver"
 	pb "github.com/crypto-zero/go-micro/v2/network/service/proto"
+	"github.com/urfave/cli/v2"
 )
 
 var (

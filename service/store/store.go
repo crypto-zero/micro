@@ -1,7 +1,6 @@
 package store
 
 import (
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2"
 	log "github.com/crypto-zero/go-micro/v2/logger"
 	"github.com/crypto-zero/go-micro/v2/store"
@@ -10,6 +9,7 @@ import (
 	"github.com/crypto-zero/micro/v2/internal/helper"
 	"github.com/crypto-zero/micro/v2/service/store/handler"
 	"github.com/pkg/errors"
+	"github.com/urfave/cli/v2"
 )
 
 var (

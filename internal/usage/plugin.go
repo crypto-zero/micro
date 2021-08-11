@@ -7,10 +7,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2/registry"
 	"github.com/crypto-zero/go-micro/v2/util/backoff"
 	"github.com/crypto-zero/micro/v2/plugin"
+	"github.com/urfave/cli/v2"
 )
 
 func init() {

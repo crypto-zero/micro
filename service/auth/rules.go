@@ -8,10 +8,10 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	"github.com/crypto-zero/cli/v2"
 	pb "github.com/crypto-zero/go-micro/v2/auth/service/proto"
 	"github.com/crypto-zero/go-micro/v2/errors"
 	"github.com/crypto-zero/micro/v2/internal/client"
+	"github.com/urfave/cli/v2"
 )
 
 func listRules(ctx *cli.Context) {

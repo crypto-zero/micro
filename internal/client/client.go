@@ -3,7 +3,6 @@ package client
 import (
 	"context"
 
-	ccli "github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2/auth"
 	"github.com/crypto-zero/go-micro/v2/client"
 	"github.com/crypto-zero/go-micro/v2/client/grpc"
@@ -11,6 +10,7 @@ import (
 	"github.com/crypto-zero/micro/v2/client/cli/util"
 	cliutil "github.com/crypto-zero/micro/v2/client/cli/util"
 	"github.com/crypto-zero/micro/v2/internal/config"
+	ccli "github.com/urfave/cli/v2"
 )
 
 // New returns a wrapped grpc client which will inject the

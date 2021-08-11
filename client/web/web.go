@@ -14,9 +14,6 @@ import (
 	"sync"
 	"time"
 
-	"github.com/go-acme/lego/v4/providers/dns/cloudflare"
-	"github.com/gorilla/mux"
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2"
 	res "github.com/crypto-zero/go-micro/v2/api/resolver"
 	"github.com/crypto-zero/go-micro/v2/api/server"
@@ -39,7 +36,10 @@ import (
 	"github.com/crypto-zero/micro/v2/internal/resolver/web"
 	"github.com/crypto-zero/micro/v2/internal/stats"
 	"github.com/crypto-zero/micro/v2/plugin"
+	"github.com/go-acme/lego/v4/providers/dns/cloudflare"
+	"github.com/gorilla/mux"
 	"github.com/serenize/snaker"
+	"github.com/urfave/cli/v2"
 	"golang.org/x/net/publicsuffix"
 )
 

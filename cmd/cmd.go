@@ -7,7 +7,6 @@ import (
 	"os/exec"
 	"sort"
 
-	ccli "github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2"
 	"github.com/crypto-zero/go-micro/v2/config/cmd"
 	gostore "github.com/crypto-zero/go-micro/v2/store"
@@ -15,6 +14,7 @@ import (
 	"github.com/crypto-zero/micro/v2/plugin/build"
 	"github.com/crypto-zero/micro/v2/server"
 	"github.com/crypto-zero/micro/v2/service"
+	ccli "github.com/urfave/cli/v2"
 
 	// clients
 	"github.com/crypto-zero/micro/v2/client/api"

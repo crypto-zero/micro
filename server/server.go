@@ -5,7 +5,6 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2"
 	"github.com/crypto-zero/go-micro/v2/config/cmd"
 	log "github.com/crypto-zero/go-micro/v2/logger"
@@ -13,6 +12,7 @@ import (
 	handler "github.com/crypto-zero/go-micro/v2/util/file"
 	"github.com/crypto-zero/micro/v2/internal/platform"
 	"github.com/crypto-zero/micro/v2/internal/update"
+	"github.com/urfave/cli/v2"
 )
 
 var (

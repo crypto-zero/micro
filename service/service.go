@@ -5,7 +5,6 @@ import (
 	"os"
 	"strings"
 
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2"
 	log "github.com/crypto-zero/go-micro/v2/logger"
 	"github.com/crypto-zero/go-micro/v2/proxy"
@@ -16,6 +15,7 @@ import (
 	"github.com/crypto-zero/go-micro/v2/server"
 	"github.com/crypto-zero/micro/v2/service/handler/exec"
 	"github.com/crypto-zero/micro/v2/service/handler/file"
+	"github.com/urfave/cli/v2"
 )
 
 func Run(ctx *cli.Context, opts ...micro.Option) {

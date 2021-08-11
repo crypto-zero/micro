@@ -13,7 +13,6 @@ import (
 	"text/tabwriter"
 	"time"
 
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2"
 	"github.com/crypto-zero/go-micro/v2/config/cmd"
 	log "github.com/crypto-zero/go-micro/v2/logger"
@@ -24,6 +23,7 @@ import (
 	cliutil "github.com/crypto-zero/micro/v2/client/cli/util"
 	"github.com/crypto-zero/micro/v2/internal/client"
 	"github.com/crypto-zero/micro/v2/service/runtime/handler"
+	"github.com/urfave/cli/v2"
 )
 
 const (

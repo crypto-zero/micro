@@ -10,13 +10,13 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2/client"
 	cbytes "github.com/crypto-zero/go-micro/v2/codec/bytes"
 	"github.com/crypto-zero/go-micro/v2/config/cmd"
 	"github.com/crypto-zero/go-micro/v2/util/file"
 	cliutil "github.com/crypto-zero/micro/v2/client/cli/util"
 	clic "github.com/crypto-zero/micro/v2/internal/command/cli"
+	"github.com/urfave/cli/v2"
 )
 
 type exec func(*cli.Context, []string) ([]byte, error)

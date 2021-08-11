@@ -3,10 +3,10 @@ package cli
 import (
 	"strings"
 
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2/config/cmd"
 	"github.com/crypto-zero/go-micro/v2/store"
 	"github.com/pkg/errors"
+	"github.com/urfave/cli/v2"
 )
 
 // makeStore is a helper function that creates a store for snapshot and restore

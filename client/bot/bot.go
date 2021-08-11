@@ -11,8 +11,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2"
+	"github.com/urfave/cli/v2"
 
 	"github.com/crypto-zero/go-micro/v2/agent/command"
 	"github.com/crypto-zero/go-micro/v2/agent/input"

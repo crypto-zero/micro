@@ -2,9 +2,9 @@
 package dns
 
 import (
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2"
 	log "github.com/crypto-zero/go-micro/v2/logger"
+	"github.com/urfave/cli/v2"
 
 	"github.com/crypto-zero/micro/v2/service/network/dns/handler"
 	dns "github.com/crypto-zero/micro/v2/service/network/dns/proto/dns"

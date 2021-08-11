@@ -5,7 +5,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2"
 	"github.com/crypto-zero/go-micro/v2/client"
 	cmucp "github.com/crypto-zero/go-micro/v2/client/mucp"
@@ -19,6 +18,7 @@ import (
 	tun "github.com/crypto-zero/go-micro/v2/tunnel"
 	"github.com/crypto-zero/go-micro/v2/tunnel/transport"
 	"github.com/crypto-zero/go-micro/v2/util/mux"
+	"github.com/urfave/cli/v2"
 )
 
 var (

@@ -4,9 +4,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2/agent/command"
 	clic "github.com/crypto-zero/micro/v2/internal/command/cli"
+	"github.com/urfave/cli/v2"
 )
 
 // Echo returns the same message

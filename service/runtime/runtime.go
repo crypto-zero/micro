@@ -4,7 +4,6 @@ package runtime
 import (
 	"os"
 
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2"
 	"github.com/crypto-zero/go-micro/v2/config/cmd"
 	log "github.com/crypto-zero/go-micro/v2/logger"
@@ -13,6 +12,7 @@ import (
 	"github.com/crypto-zero/micro/v2/service/runtime/handler"
 	"github.com/crypto-zero/micro/v2/service/runtime/manager"
 	"github.com/crypto-zero/micro/v2/service/runtime/profile"
+	"github.com/urfave/cli/v2"
 )
 
 var (

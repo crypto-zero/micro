@@ -6,10 +6,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/crypto-zero/cli/v2"
 	log "github.com/crypto-zero/go-micro/v2/logger"
 	goplugin "github.com/crypto-zero/go-micro/v2/plugin"
 	"github.com/crypto-zero/micro/v2/plugin"
+	"github.com/urfave/cli/v2"
 )
 
 func build(ctx *cli.Context) error {

@@ -6,7 +6,7 @@ import (
 	"sort"
 	"text/tabwriter"
 
-	"github.com/crypto-zero/cli/v2"
+	"github.com/urfave/cli/v2"
 )
 
 func quit(c *cli.Context, args []string) ([]byte, error) {

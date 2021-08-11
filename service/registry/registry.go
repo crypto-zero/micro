@@ -5,7 +5,6 @@ import (
 	"context"
 	"time"
 
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2"
 	log "github.com/crypto-zero/go-micro/v2/logger"
 	"github.com/crypto-zero/go-micro/v2/registry"
@@ -14,6 +13,7 @@ import (
 	rcli "github.com/crypto-zero/micro/v2/client/cli"
 	"github.com/crypto-zero/micro/v2/internal/helper"
 	"github.com/crypto-zero/micro/v2/service/registry/handler"
+	"github.com/urfave/cli/v2"
 )
 
 var (

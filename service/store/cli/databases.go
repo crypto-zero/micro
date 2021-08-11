@@ -5,9 +5,9 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2/config/cmd"
 	storeproto "github.com/crypto-zero/go-micro/v2/store/service/proto"
+	"github.com/urfave/cli/v2"
 )
 
 // Databases is the entrypoint for micro store databases

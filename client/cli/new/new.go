@@ -14,9 +14,9 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/crypto-zero/cli/v2"
 	tmpl "github.com/crypto-zero/micro/v2/internal/template"
 	"github.com/crypto-zero/micro/v2/internal/usage"
+	"github.com/urfave/cli/v2"
 	"github.com/xlab/treeprint"
 )
 

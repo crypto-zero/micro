@@ -2,7 +2,6 @@
 package debug
 
 import (
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2"
 	"github.com/crypto-zero/go-micro/v2/debug/log"
 	"github.com/crypto-zero/go-micro/v2/debug/log/kubernetes"
@@ -14,6 +13,7 @@ import (
 	pbstats "github.com/crypto-zero/micro/v2/service/debug/stats/proto"
 	tracehandler "github.com/crypto-zero/micro/v2/service/debug/trace/handler"
 	pbtrace "github.com/crypto-zero/micro/v2/service/debug/trace/proto"
+	"github.com/urfave/cli/v2"
 )
 
 var (

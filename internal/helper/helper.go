@@ -11,8 +11,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2/metadata"
+	"github.com/urfave/cli/v2"
 )
 
 func ACMEHosts(ctx *cli.Context) []string {

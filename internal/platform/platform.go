@@ -7,11 +7,11 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2/config/cmd"
 	log "github.com/crypto-zero/go-micro/v2/logger"
 	gorun "github.com/crypto-zero/go-micro/v2/runtime"
 	signalutil "github.com/crypto-zero/go-micro/v2/util/signal"
+	"github.com/urfave/cli/v2"
 
 	// include usage
 

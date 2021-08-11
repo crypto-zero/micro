@@ -9,11 +9,11 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"github.com/dustin/go-humanize"
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2/config/cmd"
 	"github.com/crypto-zero/go-micro/v2/store"
+	"github.com/dustin/go-humanize"
 	"github.com/pkg/errors"
+	"github.com/urfave/cli/v2"
 )
 
 // Read gets something from the store

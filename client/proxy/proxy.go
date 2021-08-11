@@ -5,8 +5,6 @@ import (
 	"os"
 	"strings"
 
-	"github.com/go-acme/lego/v4/providers/dns/cloudflare"
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2"
 	"github.com/crypto-zero/go-micro/v2/api/server/acme"
 	"github.com/crypto-zero/go-micro/v2/api/server/acme/autocert"
@@ -18,6 +16,8 @@ import (
 	"github.com/crypto-zero/go-micro/v2/config/cmd"
 	log "github.com/crypto-zero/go-micro/v2/logger"
 	"github.com/crypto-zero/go-micro/v2/proxy"
+	"github.com/go-acme/lego/v4/providers/dns/cloudflare"
+	"github.com/urfave/cli/v2"
 
 	//"github.com/crypto-zero/go-micro/v2/proxy/grpc"
 	"github.com/crypto-zero/go-micro/v2/proxy/http"

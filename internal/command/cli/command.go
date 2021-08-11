@@ -13,7 +13,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2/client"
 	cbytes "github.com/crypto-zero/go-micro/v2/codec/bytes"
 	"github.com/crypto-zero/go-micro/v2/config/cmd"
@@ -23,6 +22,7 @@ import (
 	"github.com/crypto-zero/go-micro/v2/registry/service"
 	inclient "github.com/crypto-zero/micro/v2/internal/client"
 	dns "github.com/crypto-zero/micro/v2/service/network/dns/proto/dns"
+	"github.com/urfave/cli/v2"
 
 	"github.com/olekukonko/tablewriter"
 	"github.com/serenize/snaker"

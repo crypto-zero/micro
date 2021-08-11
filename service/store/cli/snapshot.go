@@ -3,10 +3,10 @@ package cli
 import (
 	"net/url"
 
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2/logger"
 	"github.com/crypto-zero/micro/v2/service/store/snapshot"
 	"github.com/pkg/errors"
+	"github.com/urfave/cli/v2"
 )
 
 // Snapshot in the entrypoint for micro store snapshot

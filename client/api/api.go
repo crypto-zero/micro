@@ -7,9 +7,6 @@ import (
 	"os"
 	"strings"
 
-	"github.com/go-acme/lego/v4/providers/dns/cloudflare"
-	"github.com/gorilla/mux"
-	"github.com/crypto-zero/cli/v2"
 	"github.com/crypto-zero/go-micro/v2"
 	ahandler "github.com/crypto-zero/go-micro/v2/api/handler"
 	aapi "github.com/crypto-zero/go-micro/v2/api/handler/api"
@@ -37,6 +34,9 @@ import (
 	rrmicro "github.com/crypto-zero/micro/v2/internal/resolver/api"
 	"github.com/crypto-zero/micro/v2/internal/stats"
 	"github.com/crypto-zero/micro/v2/plugin"
+	"github.com/go-acme/lego/v4/providers/dns/cloudflare"
+	"github.com/gorilla/mux"
+	"github.com/urfave/cli/v2"
 )
 
 var (

@@ -1,8 +1,8 @@
 package cli
 
 import (
-	"github.com/crypto-zero/cli/v2"
 	"github.com/pkg/errors"
+	"github.com/urfave/cli/v2"
 )
 
 // Sync is the entrypoint for micro store sync

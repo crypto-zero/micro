@@ -26,7 +26,6 @@ require (
 	golang.org/x/crypto v0.0.0-20220321153916-2c7772ba3064
 	golang.org/x/net v0.0.0-20220325170049-de3da57026de
 	golang.org/x/tools v0.1.10
-	google.golang.org/genproto v0.0.0-20220329172620-7be39ac1afc7
 	google.golang.org/grpc v1.45.0
 )
 
@@ -113,6 +112,7 @@ require (
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/time v0.0.0-20210611083556-38a9dc6acbc6 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
+	google.golang.org/genproto v0.0.0-20220329172620-7be39ac1afc7 // indirect
 	google.golang.org/protobuf v1.28.0 // indirect
 	gopkg.in/fsnotify.v1 v1.4.7 // indirect
 	gopkg.in/ini.v1 v1.66.2 // indirect

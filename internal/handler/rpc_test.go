@@ -36,10 +36,6 @@ func (t *TestHandler) Exec(ctx context.Context, req *TestRequest, rsp *TestRespo
 			return fmt.Errorf("Expected %s for key %s got %s", v, k, val)
 		}
 	}
-
-	t.t.Logf("Received request %+v", req)
-	t.t.Logf("Received metadata %+v", md)
-
 	return nil
 }
 

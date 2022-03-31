@@ -5,8 +5,6 @@ import (
 	"math/rand"
 	"strings"
 	"time"
-
-	"github.com/pkg/errors"
 )
 
 // Platform defines a complete platform
@@ -52,7 +50,7 @@ func (p *Platform) Steps() ([]Step, error) {
 		}
 		cluster, err := k.Steps(runID)
 		if err != nil {
-			return steps, errors.Wrap(err, "Kubernetes cluster steps failed")
+			return steps, fmt.Errorf("kubernetes cluster steps failed: %w", err)
 		}
 		steps = append(steps, cluster...)
 

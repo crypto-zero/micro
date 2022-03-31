@@ -9,7 +9,6 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
-	"github.com/pkg/errors"
 	"github.com/spf13/viper"
 )
 
@@ -57,12 +56,12 @@ func (r *RemoteState) validateConfig() error {
 	case "azure":
 		return r.validateAzure()
 	default:
-		return errors.Errorf("%s is not a supported state store", stateStore)
+		return fmt.Errorf("%s is not a supported state store", stateStore)
 	}
 }
 
 func (r *RemoteState) validateAzure() error {
-	//TODO: meaningful validation
+	// TODO: meaningful validation
 	return nil
 }
 
@@ -86,7 +85,7 @@ func (r *RemoteState) validateAws() error {
 			Body:   strings.NewReader(r.ID),
 		},
 	); err != nil {
-		return errors.Wrap(err, "Could not put an object in to the remote state bucket")
+		return fmt.Errorf("could not put an object in to the remote state bucket: %w", err)
 	}
 
 	read, err := client.GetObject(
@@ -96,15 +95,15 @@ func (r *RemoteState) validateAws() error {
 		},
 	)
 	if err != nil {
-		return errors.Wrap(err, "Could not read back an object from to the remote state bucket")
+		return fmt.Errorf("could not read back an object from to the remote state bucket: %w", err)
 	}
 	body, err := ioutil.ReadAll(read.Body)
 	read.Body.Close()
 	if err != nil {
-		return errors.Wrap(err, "Error reading body from S3")
+		return fmt.Errorf("error reading body from S3: %w", err)
 	}
 	if string(body) != r.ID {
-		return fmt.Errorf("Read back an invalid value from remote state. Expected %s, got %s", r.ID, string(body))
+		return fmt.Errorf("read back an invalid value from remote state. Expected %s, got %s", r.ID, string(body))
 	}
 
 	if _, err := client.DeleteObject(
@@ -113,7 +112,7 @@ func (r *RemoteState) validateAws() error {
 			Bucket: aws.String(viper.GetString("aws-s3-bucket")),
 		},
 	); err != nil {
-		return errors.Wrap(err, "Error deleting object from S3")
+		return fmt.Errorf("error deleting object from S3: %w", err)
 	}
 	return nil
 }

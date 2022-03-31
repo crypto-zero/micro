@@ -3,6 +3,7 @@ package infra
 import (
 	"bufio"
 	"context"
+	"errors"
 	"fmt"
 	"io"
 	"net/url"
@@ -12,7 +13,6 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/pkg/errors"
 	"github.com/spf13/viper"
 )
 
@@ -63,7 +63,7 @@ func (t *TerraformModule) Validate() error {
 				return err
 			}
 			if err := filepath.Walk(u.Path, t.filecopy); err != nil {
-				return errors.Wrap(err, "filepath.Walk failed")
+				return fmt.Errorf("filepath.Walk failed: %w", err)
 			}
 		} else {
 			return errors.New("Module " + t.Name + " Scheme " + u.Scheme + " not supported")
@@ -129,11 +129,11 @@ func (t *TerraformModule) execTerraform(ctx context.Context, args ...string) err
 	tf.Env = append(tf.Env, "TF_PLUGIN_CACHE_DIR=/tmp/micro-platform-plugin-cache")
 	stdout, err := tf.StdoutPipe()
 	if err != nil {
-		return errors.Wrap(err, "StdoutPipe failed")
+		return fmt.Errorf("StdoutPipe failed: %w", err)
 	}
 	stderr, err := tf.StderrPipe()
 	if err != nil {
-		return errors.Wrap(err, "StderrPipe failed")
+		return fmt.Errorf("StderrPipe failed: %w", err)
 	}
 
 	// Wait so we don't truncate output from the underlying terraform binary
@@ -172,7 +172,7 @@ func (t *TerraformModule) execTerraform(ctx context.Context, args ...string) err
 		}(t.Name, ioPair.in, ioPair.out, ioWait)
 	}
 	if err := tf.Start(); err != nil {
-		return errors.Wrap(err, "Couldn't execute terraform")
+		return fmt.Errorf("couldn't execute terraform: %w", err)
 	}
 
 	return tf.Wait()

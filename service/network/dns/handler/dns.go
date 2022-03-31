@@ -2,12 +2,12 @@ package handler
 
 import (
 	"context"
+	"errors"
 
 	log "github.com/crypto-zero/go-micro/v2/logger"
 	"github.com/crypto-zero/go-micro/v2/metadata"
 	dns "github.com/crypto-zero/micro/v2/service/network/dns/proto/dns"
 	"github.com/crypto-zero/micro/v2/service/network/dns/provider"
-	"github.com/pkg/errors"
 )
 
 // DNS handles incoming gRPC requests
@@ -51,14 +51,14 @@ func (d *DNS) Resolve(ctx context.Context, req *dns.ResolveRequest, rsp *dns.Res
 func (d *DNS) validateMetadata(ctx context.Context) error {
 	md, ok := metadata.FromContext(ctx)
 	if !ok {
-		return errors.New("Denied: error getting request metadata")
+		return errors.New("denied: error getting request metadata")
 	}
 	token, found := md["Authorization"]
 	if !found {
-		return errors.New("Denied: Authorization metadata not provided")
+		return errors.New("denied: Authorization metadata not provided")
 	}
 	if token != "Bearer "+d.bearerToken {
-		return errors.New("Denied: Authorization metadata is not valid")
+		return errors.New("denied: Authorization metadata is not valid")
 	}
 	return nil
 }

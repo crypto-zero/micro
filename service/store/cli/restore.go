@@ -1,11 +1,12 @@
 package cli
 
 import (
+	"errors"
+	"fmt"
 	"net/url"
 
 	"github.com/crypto-zero/go-micro/v2/logger"
 	"github.com/crypto-zero/micro/v2/service/store/snapshot"
-	"github.com/pkg/errors"
 	"github.com/urfave/cli/v2"
 )
 
@@ -13,7 +14,7 @@ import (
 func Restore(ctx *cli.Context) error {
 	s, err := makeStore(ctx)
 	if err != nil {
-		return errors.Wrap(err, "couldn't construct a store")
+		return fmt.Errorf("couldn't construct a store: %w", err)
 	}
 	log := logger.DefaultLogger
 	var rs snapshot.Restore
@@ -24,23 +25,23 @@ func Restore(ctx *cli.Context) error {
 	}
 	u, err := url.Parse(source)
 	if err != nil {
-		return errors.Wrap(err, "source is invalid")
+		return fmt.Errorf("source is invalid: %w", err)
 	}
 	switch u.Scheme {
 	case "file":
 		rs = snapshot.NewFileRestore(snapshot.Source(source))
 	default:
-		return errors.Errorf("unsupported source scheme: %s", u.Scheme)
+		return fmt.Errorf("unsupported source scheme: %s", u.Scheme)
 	}
 
 	err = rs.Init()
 	if err != nil {
-		return errors.Wrap(err, "failed to initialise the restorer")
+		return fmt.Errorf("failed to initialise the restorer: %w", err)
 	}
 
 	recordChan, err := rs.Start()
 	if err != nil {
-		return errors.Wrap(err, "couldn't start the restorer")
+		return fmt.Errorf("couldn't start the restorer: %w", err)
 	}
 	counter := uint64(0)
 	for r := range recordChan {

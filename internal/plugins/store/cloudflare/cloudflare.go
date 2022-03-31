@@ -18,8 +18,9 @@ import (
 	"strings"
 	"time"
 
+	"errors"
+
 	"github.com/crypto-zero/go-micro/v2/store"
-	"github.com/pkg/errors"
 
 	"github.com/patrickmn/go-cache"
 )
@@ -317,7 +318,7 @@ func (w *workersKV) request(ctx context.Context, method, path string, body inter
 		} else {
 			jsonBody, err = json.Marshal(body)
 			if err != nil {
-				return nil, nil, 0, errors.Wrap(err, "error marshalling params to JSON")
+				return nil, nil, 0, fmt.Errorf("error marshalling params to JSON: %w", err)
 			}
 		}
 	} else {
@@ -332,7 +333,7 @@ func (w *workersKV) request(ctx context.Context, method, path string, body inter
 
 	req, err := http.NewRequestWithContext(ctx, method, apiBaseURL+path, reqBody)
 	if err != nil {
-		return nil, nil, 0, errors.Wrap(err, "error creating new request")
+		return nil, nil, 0, fmt.Errorf("error creating new request: %w", err)
 	}
 
 	for key, value := range headers {

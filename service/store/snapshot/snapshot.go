@@ -2,13 +2,14 @@ package snapshot
 
 import (
 	"encoding/gob"
+	"errors"
+	"fmt"
 	"net/url"
 	"os"
 	"sync"
 	"time"
 
 	"github.com/crypto-zero/go-micro/v2/store"
-	"github.com/pkg/errors"
 )
 
 // Snapshot creates snapshots of a go-micro store
@@ -65,10 +66,10 @@ func (f *FileSnapshot) Init(opts ...SnapshotOption) error {
 	}
 	u, err := url.Parse(f.Options.Destination)
 	if err != nil {
-		return errors.Wrap(err, "destination is invalid")
+		return fmt.Errorf("destination is invalid: %w", err)
 	}
 	if u.Scheme != "file" {
-		return errors.Errorf("unsupported scheme %s (wanted file)", u.Scheme)
+		return fmt.Errorf("unsupported scheme %s (wanted file)", u.Scheme)
 	}
 	if f.wg == nil {
 		f.wg = &sync.WaitGroup{}
@@ -80,11 +81,11 @@ func (f *FileSnapshot) Init(opts ...SnapshotOption) error {
 // Start opens a channel which recieves *store.Record and writes them to storage
 func (f *FileSnapshot) Start() (chan<- *store.Record, error) {
 	if f.records != nil || f.encoder != nil || f.file != nil {
-		return nil, errors.New("Snapshot is already in use")
+		return nil, errors.New("snapshot is already in use")
 	}
 	fi, err := os.OpenFile(f.path, os.O_CREATE|os.O_TRUNC|os.O_RDWR, 0o600)
 	if err != nil {
-		return nil, errors.Wrapf(err, "couldn't open file %s", f.path)
+		return nil, fmt.Errorf("couldn't open file %s: %w", f.path, err)
 	}
 	f.encoder = gob.NewEncoder(fi)
 	f.file = fi
@@ -120,7 +121,7 @@ func (f *FileSnapshot) receiveRecords(rec <-chan *store.Record) {
 		copy(ir.Value, r.Value)
 		if err := f.encoder.Encode(ir); err != nil {
 			// only thing to do here is panic
-			panic(errors.Wrap(err, "couldn't write to file"))
+			panic(fmt.Errorf("couldn't write to file: %w", err))
 		}
 		println("encoded", ir.Key)
 	}

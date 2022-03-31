@@ -1,6 +1,8 @@
 package store
 
 import (
+	"fmt"
+
 	"github.com/crypto-zero/go-micro/v2"
 	log "github.com/crypto-zero/go-micro/v2/logger"
 	"github.com/crypto-zero/go-micro/v2/store"
@@ -8,7 +10,6 @@ import (
 	mcli "github.com/crypto-zero/micro/v2/client/cli"
 	"github.com/crypto-zero/micro/v2/internal/helper"
 	"github.com/crypto-zero/micro/v2/service/store/handler"
-	"github.com/pkg/errors"
 	"github.com/urfave/cli/v2"
 )
 
@@ -68,13 +69,13 @@ func Run(ctx *cli.Context, srvOpts ...micro.Option) {
 			Key:   "databases/" + database,
 			Value: []byte{},
 		}, store.WriteTo("micro", "internal")); err != nil {
-			return nil, errors.Wrap(err, "micro store couldn't store new database in internal table")
+			return nil, fmt.Errorf("micro store couldn't store new database in internal table: %w", err)
 		}
 		if err := storeHandler.Default.Write(&store.Record{
 			Key:   "tables/" + database + "/" + table,
 			Value: []byte{},
 		}, store.WriteTo("micro", "internal")); err != nil {
-			return nil, errors.Wrap(err, "micro store couldn't store new table in internal table")
+			return nil, fmt.Errorf("micro store couldn't store new table in internal table: %w", err)
 		}
 
 		return storeHandler.Default, nil

@@ -76,7 +76,7 @@ func TestStorageImplementation(t *testing.T) {
 	}
 
 	// Test Unlock
-	if err := s.Unlock("test"); err != nil {
+	if err := s.Unlock(context.Background(), "test"); err != nil {
 		t.Fatal(err)
 	}
 
@@ -107,14 +107,14 @@ func TestStorageImplementation(t *testing.T) {
 
 	// Test Store
 	for _, d := range testdata {
-		if err := s.Store(d.key, d.value); err != nil {
+		if err := s.Store(context.Background(), d.key, d.value); err != nil {
 			t.Fatal(err.Error())
 		}
 	}
 
 	// Test Load
 	for _, d := range testdata {
-		if value, err := s.Load(d.key); err != nil {
+		if value, err := s.Load(context.Background(), d.key); err != nil {
 			t.Fatal(err.Error())
 		} else {
 			if !reflect.DeepEqual(value, d.value) {
@@ -125,13 +125,13 @@ func TestStorageImplementation(t *testing.T) {
 
 	// Test Exists
 	for _, d := range testdata {
-		if !s.Exists(d.key) {
+		if !s.Exists(context.Background(), d.key) {
 			t.Fatalf("%s should exist, but doesn't\n", d.key)
 		}
 	}
 
 	// Test List
-	if list, err := s.List("/", true); err != nil {
+	if list, err := s.List(context.Background(), "/", true); err != nil {
 		t.Fatal(err.Error())
 	} else {
 		var expected []string
@@ -147,7 +147,7 @@ func TestStorageImplementation(t *testing.T) {
 			t.Fatalf("List: Expected %v, got %v\n", expected, list)
 		}
 	}
-	if list, err := s.List("/foo", false); err != nil {
+	if list, err := s.List(context.Background(), "/foo", false); err != nil {
 		t.Fatal(err.Error())
 	} else {
 		sort.Strings(list)
@@ -159,7 +159,7 @@ func TestStorageImplementation(t *testing.T) {
 
 	// Test Stat
 	for _, d := range testdata {
-		info, err := s.Stat(d.key)
+		info, err := s.Stat(context.Background(), d.key)
 		if err != nil {
 			t.Fatal(err.Error())
 		} else {
@@ -178,7 +178,7 @@ func TestStorageImplementation(t *testing.T) {
 
 	// Test Delete
 	for _, d := range testdata {
-		if err := s.Delete(d.key); err != nil {
+		if err := s.Delete(context.Background(), d.key); err != nil {
 			t.Fatal(err.Error())
 		}
 	}

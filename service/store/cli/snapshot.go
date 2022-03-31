@@ -1,11 +1,12 @@
 package cli
 
 import (
+	"errors"
+	"fmt"
 	"net/url"
 
 	"github.com/crypto-zero/go-micro/v2/logger"
 	"github.com/crypto-zero/micro/v2/service/store/snapshot"
-	"github.com/pkg/errors"
 	"github.com/urfave/cli/v2"
 )
 
@@ -13,7 +14,7 @@ import (
 func Snapshot(ctx *cli.Context) error {
 	s, err := makeStore(ctx)
 	if err != nil {
-		return errors.Wrap(err, "couldn't construct a store")
+		return fmt.Errorf("couldn't construct a store: %w", err)
 	}
 	log := logger.DefaultLogger
 	dest := ctx.String("destination")
@@ -24,37 +25,37 @@ func Snapshot(ctx *cli.Context) error {
 	}
 	u, err := url.Parse(dest)
 	if err != nil {
-		return errors.Wrap(err, "destination is invalid")
+		return fmt.Errorf("destination is invalid: %w", err)
 	}
 	switch u.Scheme {
 	case "file":
 		sn = snapshot.NewFileSnapshot(snapshot.Destination(dest))
 	default:
-		return errors.Errorf("unsupported destination scheme: %s", u.Scheme)
+		return fmt.Errorf("unsupported destination scheme: %s", u.Scheme)
 	}
 	err = sn.Init()
 	if err != nil {
-		return errors.Wrap(err, "failed to initialise the snapshotter")
+		return fmt.Errorf("failed to initialise the snapshotter: %w", err)
 	}
 
 	log.Logf(logger.InfoLevel, "Snapshotting store %s", s.String())
 	recordChan, err := sn.Start()
 	if err != nil {
-		return errors.Wrap(err, "couldn't start the snapshotter")
+		return fmt.Errorf("couldn't start the snapshotter: %w", err)
 	}
 	keys, err := s.List()
 	if err != nil {
-		return errors.Wrap(err, "couldn't List() from store "+s.String())
+		return fmt.Errorf("couldn't List() from store %s: %w", s.String(), err)
 	}
 	log.Logf(logger.DebugLevel, "Snapshotting %d keys", len(keys))
 
 	for _, key := range keys {
 		r, err := s.Read(key)
 		if err != nil {
-			return errors.Wrapf(err, "couldn't read key %s", key)
+			return fmt.Errorf("couldn't read key %s: %w", key, err)
 		}
 		if len(r) != 1 {
-			return errors.Errorf("reading %s from %s returned 0 records", key, s.String())
+			return fmt.Errorf("reading %s from %s returned 0 records", key, s.String())
 		}
 		recordChan <- r[0]
 	}

@@ -12,6 +12,9 @@ func TestTerraformModule(t *testing.T) {
 	if e := os.Getenv("IN_TRAVIS_CI"); e == "yes" {
 		t.Skip("In Travis CI")
 	}
+	if e := os.Getenv("TEST_TERRAFORM"); e != "yes" {
+		t.Skip("no require test terraform")
+	}
 	rand.Seed(time.Now().UnixNano())
 	path := fmt.Sprintf("/tmp/test-module-%d", rand.Int31())
 	testModule := &TerraformModule{

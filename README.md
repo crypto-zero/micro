@@ -1,4 +1,4 @@
-# Micro [![License](https://img.shields.io/:license-apache-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![GoDoc](https://pkg.go.dev/github.com/crypto-zero/micro?status.svg)](https://pkg.go.dev/github.com/crypto-zero/micro/v2) [![Travis CI](https://travis-ci.org/micro/micro.svg?branch=master)](https://travis-ci.org/micro/micro) [![Go Report Card](https://goreportcard.com/badge/micro/micro)](https://goreportcard.com/report/github.com/crypto-zero/micro)
+# Micro [![License](https://img.shields.io/:license-apache-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![GoDoc](https://godoc.org/github.com/crypto-zero/micro/v2?status.svg)](https://pkg.go.dev/github.com/crypto-zero/micro/v2) [![Travis CI](https://travis-ci.org/micro/micro.svg?branch=master)](https://travis-ci.org/micro/micro) [![Go Report Card](https://goreportcard.com/badge/micro/micro)](https://goreportcard.com/report/github.com/crypto-zero/micro)
 
 Micro is a distributed systems runtime for the Cloud and beyond.
 

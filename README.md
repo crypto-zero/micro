@@ -73,25 +73,6 @@ From source
 go get github.com/crypto-zero/micro/v2
 ```
 
-Docker image
-
-```
-docker pull micro/micro
-```
-
-Latest release binaries
-
-```
-# MacOS
-curl -fsSL https://raw.githubusercontent.com/micro/micro/master/scripts/install.sh | /bin/bash
-
-# Linux
-wget -q  https://raw.githubusercontent.com/micro/micro/master/scripts/install.sh -O - | /bin/bash
-
-# Windows
-powershell -Command "iwr -useb https://raw.githubusercontent.com/micro/micro/master/scripts/install.ps1 | iex"
-```
-
 ## Getting Started
 
 Boot the entire runtime environment locally
